@@ -1,0 +1,27 @@
+[project]
+name = "auradrive-perception"
+version = "0.1.0"
+description = "Code-first implementation of AuraDrive's Variety/Veracity data pipeline (nuScenes-mini) plus an end-to-end perception ML + MLOps loop."
+requires-python = ">=3.10"
+dependencies = [
+    "nuscenes-devkit>=1.1.11",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "deltalake>=0.15",
+    "numpy>=1.24",
+    "pydantic>=2.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+spark = ["pyspark>=3.5"]
+ml = ["torch>=2.2", "torchvision>=0.17", "mlflow>=2.10", "pillow>=10.0"]
+serve = ["fastapi>=0.110", "uvicorn>=0.27"]
+dev = ["pytest>=8.0", "ruff>=0.3", "pytest-cov>=4.1"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

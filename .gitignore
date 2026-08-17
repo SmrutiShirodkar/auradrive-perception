@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/bronze/*
+data/silver/*
+data/gold/*
+!data/*/.gitkeep
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+mlruns/
+*.ckpt
+*.pt
+.DS_Store

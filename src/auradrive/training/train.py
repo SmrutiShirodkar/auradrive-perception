@@ -7,7 +7,7 @@ and the 320px input keeps CPU training tractable on nuScenes-mini's ~98
 labeled key frames, while the code path is identical to what you'd run
 unchanged on an Azure ML GPU compute instance for a larger fleet dataset.
 
-    python -m auradrive.training.train --nuscenes-root ../v1.0-mini \
+    python -m auradrive.training.train --nuscenes-root v1.0-mini \
         --labels data/gold/cam_front_labels.parquet --epochs 5
 
 Tracks params/metrics/model with MLflow (local file store by default;

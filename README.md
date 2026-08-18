@@ -104,6 +104,28 @@ data/           bronze, silver, gold parquet output (not committed)
 
 The 34.3% pass rate is expected, not a bug: cameras run near 12 Hz and LiDAR near 20 Hz, so most non key frame sweeps genuinely fall outside a strict 10 ms window of the key frame timestamp. This mirrors the report's own claim that a naive fusion pipeline needs an explicit quality gate rather than assuming every sweep is usable.
 
+## Dataset
+
+This project runs on the nuScenes mini split, about 4 GB, which is not included in this repository. Download it from the official nuScenes site:
+
+https://www.nuscenes.org/nuscenes#download
+
+Select the "Mini" split under Full dataset (v1.0), then extract it so the folder sits at the repository root as `v1.0-mini/`, matching the layout used by every command below:
+
+```
+AuraDrive-Perception/
+  v1.0-mini/
+    v1.0-mini/       (JSON metadata tables)
+    samples/
+    sweeps/
+    maps/
+  src/
+  tests/
+  ...
+```
+
+The dataset is distributed under its own nuScenes license terms; see the LICENSE file inside the downloaded archive.
+
 ## Running it
 
 Install dependencies (CPU only, no GPU or Azure account required):
@@ -112,16 +134,16 @@ Install dependencies (CPU only, no GPU or Azure account required):
 pip install -e ".[ml,serve,dev]"
 ```
 
-Run the Bronze to Silver pipeline against a local copy of nuScenes mini:
+Run the Bronze to Silver pipeline against the local nuScenes mini copy:
 
 ```
-python -m auradrive.pipeline --nuscenes-root /path/to/v1.0-mini --out data
+python -m auradrive.pipeline --nuscenes-root v1.0-mini --out data
 ```
 
 Build Gold layer detection labels and train the detector:
 
 ```
-python -m auradrive.training.train --nuscenes-root /path/to/v1.0-mini \
+python -m auradrive.training.train --nuscenes-root v1.0-mini \
     --labels data/gold/cam_front_labels.parquet --epochs 5
 ```
 

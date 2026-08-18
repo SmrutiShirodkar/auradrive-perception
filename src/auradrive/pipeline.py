@@ -2,7 +2,7 @@
 End-to-end CLI entrypoint: nuScenes-mini raw JSON -> Bronze sweeps ->
 Silver fused world model + quarantine, written as Parquet.
 
-    python -m auradrive.pipeline --nuscenes-root ../v1.0-mini --out data
+    python -m auradrive.pipeline --nuscenes-root v1.0-mini --out data
 
 Kept intentionally thin: no Spark session, no Azure SDK calls. Everything
 runs in-process on pandas/pyarrow, which is enough for nuScenes-mini's

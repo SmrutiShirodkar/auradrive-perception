@@ -4,7 +4,7 @@ import pytest
 
 from auradrive.ingest.nuscenes_loader import load_bronze_sweeps
 
-NUSCENES_ROOT = Path(__file__).resolve().parents[2] / "v1.0-mini"
+NUSCENES_ROOT = Path(__file__).resolve().parents[1] / "v1.0-mini"
 
 
 @pytest.mark.skipif(

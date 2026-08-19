@@ -1,6 +1,6 @@
 # AuraDrive Perception
 
-A code first implementation of the data engineering and machine learning problem described in the AuraDrive Technologies Big Data consultancy report (COMP40711). The report proposes an Azure architecture for fusing multi modal autonomous vehicle sensor data (camera, LiDAR, radar) at fleet scale. This repository implements the same core logic in runnable Python, on the real nuScenes mini dataset, and extends it with an object detection model and serving layer that the report only described conceptually.
+A code first implementation of the data engineering and machine learning problem described as AuraDrive (given name for the project). The project proposes an Azure architecture for fusing multi modal autonomous vehicle sensor data (camera, LiDAR, radar) at fleet scale. This repository implements the same core logic in runnable Python, on the real nuScenes mini dataset, and extends it with an object detection model and serving layer that the report only described conceptually.
 
 ## Relationship to the report
 

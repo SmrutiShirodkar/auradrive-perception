@@ -4,7 +4,7 @@ A code first implementation of the data engineering and machine learning problem
 
 ## Relationship to the report
 
-The report is a full Azure product level design (Event Hubs, Azure Batch, ADLS Gen2, Databricks, Cosmos DB, Synapse, AKS) sized for a 200 vehicle fleet generating roughly 500 TB per day. Reproducing that literally would mean provisioning expensive cloud services around a 4 GB sample dataset, which would demonstrate portal configuration rather than engineering.
+The project roots from original academic report with full Azure product level design (Event Hubs, Azure Batch, ADLS Gen2, Databricks, Cosmos DB, Synapse, AKS) sized for a 200 vehicle fleet generating roughly 500 TB per day. Reproducing that literally would mean provisioning expensive cloud services around a 4 GB sample dataset, which would demonstrate portal configuration rather than engineering.
 
 This repository instead implements the parts of the report that are genuinely about engineering logic, at a scale that runs on a laptop, and is honest about what is and is not proven here.
 
